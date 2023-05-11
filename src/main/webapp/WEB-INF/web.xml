@@ -1,0 +1,67 @@
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>CreateServlet</servlet-name>
+		<servlet-class>bankingApp.CreateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateServlet</servlet-name>
+		<url-pattern>/CreateServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BalanceServlet</servlet-name>
+		<servlet-class>bankingApp.BalanceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BalanceServlet</servlet-name>
+		<url-pattern>/BalanceServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DepositServlet</servlet-name>
+		<servlet-class>bankingApp.DepositServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DepositServlet</servlet-name>
+		<url-pattern>/DepositServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>WithdrawServlet</servlet-name>
+		<servlet-class>bankingApp.WithdrawServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WithdrawServlet</servlet-name>
+		<url-pattern>/WithdrawServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>TransferServlet</servlet-name>
+		<servlet-class>bankingApp.TransferServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TransferServlet</servlet-name>
+		<url-pattern>/TransferServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CloseServlet</servlet-name>
+		<servlet-class>bankingApp.CloseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CloseServlet</servlet-name>
+		<url-pattern>/CloseServlet</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
+ 

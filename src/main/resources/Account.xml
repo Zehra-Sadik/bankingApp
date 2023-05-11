@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Account">
+    <insert id="insert" parameterType="Account" useGeneratedKeys="true" keyProperty="acc_no" keyColumn="acc_no">
+        INSERT INTO account (NAME, PASSWORD, REPASSWORD, ADDRESS, PHONE, AMOUNT ) VALUES (#{name}, #{password}, #{repassword}, #{address}, #{phone}, #{amount})
+    </insert>
+    <select id="verify" parameterType="Account" resultType="int">
+    	SELECT count(name) FROM account WHERE acc_no = #{acc_no} AND name=#{name} AND password=#{password}
+    </select>
+    <select id="checkAcc" parameterType="Account" resultType="int">
+    	SELECT count(name) FROM account WHERE acc_no = #{acc_no}
+    </select>
+    <select id="checkBalance" parameterType="Account" resultType="double">
+    	SELECT amount FROM account WHERE acc_no = #{acc_no} AND name=#{name} AND password=#{password}
+    </select>
+    <update id = "updateAmount" parameterType = "Account">
+   		UPDATE account SET amount = #{amount} WHERE acc_no = #{acc_no}
+	</update>
+	<update id="transferDetails" parameterType="map">
+		UPDATE account SET amount = amount+${amount} WHERE acc_no = ${acc_no}
+	</update>
+	<delete id = "deleteAcc" parameterType = "Account">
+   		DELETE from account WHERE acc_no = #{acc_no}
+	</delete>
+</mapper>
